@@ -12,13 +12,13 @@ COPY src ./src
 RUN mvn clean install
 
 # Create a minimal runtime image
-FROM adoptopenjdk:17-jre-hotspot
+FROM eclipse-temurin:17-jre
 
 # Set the working directory in the runtime container
 WORKDIR /app
 
 # Copy the JAR file from the build stage to the runtime container
-COPY --from=build /app/target/your-application.jar ./app.jar
+COPY --from=build /app/target/*.jar ./app.jar
 
 # Expose the port that your Spring Boot application will run on
 EXPOSE 8080
