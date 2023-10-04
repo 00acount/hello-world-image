@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://client-ev4g.onrender.com")
 @RestController
 public class TestBackendApplication {
 
