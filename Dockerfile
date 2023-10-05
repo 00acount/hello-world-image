@@ -24,4 +24,4 @@ COPY --from=build /app/target/*.jar ./app.jar
 EXPOSE 8080
 
 # Define the command to run your Spring Boot application
-CMD ["java", "-jar", "-DTEST_FIELD=isworking", "app.jar"]
+CMD ["java", "-jar", "-DTEST_FIELD=${ENV}", "app.jar"]
